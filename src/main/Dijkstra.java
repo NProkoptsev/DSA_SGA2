@@ -60,7 +60,7 @@ public class Dijkstra {
             int current = openSet.poll();
             if (current == goal)
                 return reconstructPath(statistics);
-            closedSet.add(current);
+//            closedSet.add(current);
             for (int x : offsets) {
                 int neighbor = x + current;
 //                if (closedSet.contains(neighbor)  || array[current] == -1)

@@ -63,13 +63,6 @@ public class Main {
         double[] stats = new double[2];
         final int MAX_PATH_LENGTH = 1250;
 
-//estimates
-//        for (int i = 0; i < 100; i++) {
-//            dijkstra.clear();
-//            dijkstra.findRoute(stats, i*0.01);
-//            System.out.println(stats[0] + " " + (int) stats[1]);
-//        }
-
         //Bisection method
         double a = 0, b = 1, c = 0;
         double pathLengthA = 0, pathLengthB = 0, pathLengthC;
@@ -103,6 +96,7 @@ public class Main {
         ArrayList<Integer> path = dijkstra.findRoute(stats, estimate);
         System.out.println("Length : " + stats[0] + " Radiation : " + (int) stats[1]);
         GraphWriter.writeBMPImage("map.png", path, "path.bmp");
+        GraphWriter.writeRadiation("map.png", radiation,"radiation.png", graph );
     }
 
     public static double[] calculateRadiation(int[] graph, String filename) throws IOException {
